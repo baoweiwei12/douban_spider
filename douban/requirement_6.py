@@ -64,13 +64,13 @@ class DoubanCastScraper:
         cast_list_url = self.cast_url
         count = 0
         for list_wrapper_div in list_wrapper_divs:
-            role_category_tag = list_wrapper_div.select_one(".h2")
+            role_category_tag = list_wrapper_div.select_one("h2")
             role_category = (
                 role_category_tag.text.strip() if role_category_tag else None
             )
             celebrity_lis = list_wrapper_div.select(".celebrity")
             for celebrity_li in celebrity_lis:
-                celebrity_a = celebrity_li.select_one(".avatar > a")
+                celebrity_a = celebrity_li.select_one(".name > a")
                 cast_url = celebrity_a.attrs.get("href") if celebrity_a else None
                 cast_name = celebrity_a.text.strip() if celebrity_a else None
                 order = count

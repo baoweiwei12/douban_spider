@@ -76,6 +76,6 @@ if __name__ == "__main__":
     # 任务数
     TASK_NUMS = 1
     # 每线程组休眠秒数
-    SECONDS = 20
+    SECONDS = 10
 
     main(TASK_NUMS, SECONDS, PROXY_URL)

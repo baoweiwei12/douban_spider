@@ -3,7 +3,7 @@ import colorlog
 from logging.handlers import RotatingFileHandler
 
 
-def init_logger(name:str):
+def init_logger(name: str):
     # 创建自定义的日志格式器
     color_formatter = colorlog.ColoredFormatter(
         "%(log_color)s%(levelname)s%(reset)s:     %(asctime)s     %(message)s",
@@ -30,7 +30,7 @@ def init_logger(name:str):
 
     # 创建轮转文件处理器（文件输出）
     file_handler = RotatingFileHandler(
-        f"./logs/{name}.txt",
+        f"./logs/{name}.log",
         maxBytes=5 * 1024 * 1024,  # 文件大小限制（5MB）
         backupCount=5,  # 保留的旧日志文件数
         encoding="utf-8",

@@ -1,5 +1,6 @@
 from douban.requirement_1 import DoubanPersonScraper
 from douban.requirement_4 import DoubanCollaborationScraper
+from douban.requirement_6 import DoubanCastScraper
 
 
 def test_1(id: str, proxy: str | None = None):
@@ -19,6 +20,14 @@ def test4(id: str, proxy: str | None = None):
         print(result.model_dump())
 
 
+def test6(id: str, proxy: str | None = None):
+    scraper = DoubanCastScraper(id, proxy)
+    result = scraper.get_data()
+    for i in result:
+        print(i.model_dump())
+
+
 if __name__ == "__main__":
     # test_1("30103490", "http://127.0.0.1:7890")
-    test4("34880873")
+    # test4("34880873")
+    test6("27042557")
